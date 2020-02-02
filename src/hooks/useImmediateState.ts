@@ -24,7 +24,7 @@ export const useImmediateState = <S extends {}>(init: S): [S, SetState<S>] => {
           state,
           typeof action === 'function'
             ? (action as (arg: S) => S)(state)
-            : action;
+            : action,
         );
       } else {
         setState(action);
